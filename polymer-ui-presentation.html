@@ -16,11 +16,28 @@
  */
 -->
 <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/polymer-ui-pages/polymer-ui-pages.html">
+<link rel="import" href="bower_components/polymer-ui-arrow/polymer-ui-arrow.html">
 
-<polymer-element name="polymer-ui-presentation" noscript>
+<polymer-element name="polymer-ui-presentation">
   <template>
     <link rel="stylesheet" href="polymer-ui-presentation.css">
     <h1>polymer-ui-presentation</h1>
-    <content></content>
+    <polymer-ui-arrow direction="left" on-click={{prevSlide}}></polymer-ui-arrow>
+    <polymer-ui-arrow direction="right" on-click={{nextSlide}}></polymer-ui-arrow>
+    <polymer-ui-pages id="pages">
+      <content></content>
+    </polymer-ui-pages>
   </template>
+  <script>
+    Polymer('polymer-ui-presentation', {
+      nextSlide: function() {
+        this.$.pages.selected = parseInt(this.$.pages.selected, 10) + 1;
+      },
+
+      prevSlide: function() {
+        this.$.pages.selected = parseInt(this.$.pages.selected, 10) - 1;
+      }
+    });
+  </script>
 </polymer-element>
