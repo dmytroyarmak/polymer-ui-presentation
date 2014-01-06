@@ -1,0 +1,25 @@
+{
+  "name": "polymer-ui-presentation",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dmytroyarmak/polymer-ui-presentation",
+  "authors": [
+    "Dmytro Yarmak <dyarmak@heliostech.hk>"
+  ],
+  "description": "Simple presentation element build with Polymer and Webcomponents.",
+  "keywords": [
+    "polymer",
+    "web components",
+    "polymer ui"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#~0.1.1"
+  }
+}
