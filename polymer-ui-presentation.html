@@ -36,6 +36,7 @@
       ready: function() {
         this.slidesNumber = this.querySelectorAll('section').length;
         this.currentSlide = 1;
+        this.centralizeSlides();
       },
 
       nextSlide: function() {
@@ -46,6 +47,14 @@
       prevSlide: function() {
         this.currentSlide = Math.max(this.currentSlide - 1, 1);
         this.$.pages.selected = this.currentSlide - 1;
+      },
+
+      centralizeSlides: function() {
+        var hostHeight = this.clientHeight;
+        this.querySelectorAll('section').array().forEach(function(slide) {
+          var top = ~~((hostHeight - slide.clientHeight) / 2);
+          slide.setAttribute('style', 'position: absolute; top: ' + top + 'px');
+        });
       }
     });
   </script>
