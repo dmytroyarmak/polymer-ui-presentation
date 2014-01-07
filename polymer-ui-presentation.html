@@ -25,20 +25,27 @@
 <polymer-element name="polymer-ui-presentation">
   <template>
     <link rel="stylesheet" href="polymer-ui-presentation.css">
-    <polymer-ui-arrow direction="left" color="#008CBA" on-click={{prevSlide}}></polymer-ui-arrow>
-    <polymer-ui-arrow direction="right" color="#008CBA" on-click={{nextSlide}}></polymer-ui-arrow>
     <polymer-ui-pages id="pages">
       <content></content>
     </polymer-ui-pages>
+    <polymer-ui-arrow direction="left" color="#008CBA" on-click={{prevSlide}}></polymer-ui-arrow>
+    <polymer-ui-arrow direction="right" color="#008CBA" on-click={{nextSlide}}></polymer-ui-arrow>
   </template>
   <script>
     Polymer('polymer-ui-presentation', {
+      ready: function() {
+        this.slidesNumber = this.querySelectorAll('section').length;
+        this.currentSlide = 1;
+      },
+
       nextSlide: function() {
-        this.$.pages.selected = parseInt(this.$.pages.selected, 10) + 1;
+        this.currentSlide = Math.min(this.currentSlide + 1, this.slidesNumber);
+        this.$.pages.selected = this.currentSlide - 1;
       },
 
       prevSlide: function() {
-        this.$.pages.selected = parseInt(this.$.pages.selected, 10) - 1;
+        this.currentSlide = Math.max(this.currentSlide - 1, 1);
+        this.$.pages.selected = this.currentSlide - 1;
       }
     });
   </script>
