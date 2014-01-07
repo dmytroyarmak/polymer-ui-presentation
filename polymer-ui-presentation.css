@@ -29,8 +29,7 @@ polymer-ui-pages {
 polymer-ui-pages section {
   display: block;
   position: static;
-  width: 100%;
-  padding: 20px 0px;
+  padding: 20px;
 
   z-index: 10;
   line-height: 1.2em;

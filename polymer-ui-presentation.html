@@ -28,8 +28,8 @@
     <polymer-ui-pages id="pages">
       <content></content>
     </polymer-ui-pages>
-    <polymer-ui-arrow direction="left" color="#008CBA" on-click={{prevSlide}}></polymer-ui-arrow>
-    <polymer-ui-arrow direction="right" color="#008CBA" on-click={{nextSlide}}></polymer-ui-arrow>
+    <polymer-ui-arrow direction="left" id="leftArrow" on-click={{prevSlide}}></polymer-ui-arrow>
+    <polymer-ui-arrow direction="right" id="rightArrow" on-click={{nextSlide}}></polymer-ui-arrow>
   </template>
   <script>
     Polymer('polymer-ui-presentation', {
@@ -55,6 +55,19 @@
           var top = ~~((hostHeight - slide.clientHeight) / 2);
           slide.setAttribute('style', 'position: absolute; top: ' + top + 'px');
         });
+      },
+
+      currentSlideChanged: function() {
+        this.$.leftArrow.color = this.getLeftArrowColor();
+        this.$.rightArrow.color = this.getRightArrowColor();
+      },
+
+      getLeftArrowColor: function() {
+        return (this.currentSlide === 1 ? '#6F6F6F' : '#008CBA');
+      },
+
+      getRightArrowColor: function() {
+        return (this.currentSlide === this.slidesNumber ? '#6F6F6F' : '#008CBA');
       }
     });
   </script>
