@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+      html, body {
+        padding: 0;
+        margin: 0;
+      }
+
+      header {
+        background-color: #074E68;
+        border: 1px solid #074E68;
+      }
+
+      h1 {
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 2em;
+      }
+
+      h2 {
+        width: 400px;
+        padding-bottom: 1em;
+        border-bottom: 1px solid #6f6f6f;
+        margin: 1em auto;
+        color: #6f6f6f;
+        line-height: 1.4;
+        font-style: normal;
+        font-weight: 300;
+        font-size: 1.5em;
+        text-align: center;
+      }
+
+      polymer-ui-presentation {
+          width: 600px;
+          height: 400px;
+          border: 10px solid #008CBA;
+          margin:  0 auto;
+      }
+    </style>
     <script src="bower_components/platform/platform.js"></script>
     <link rel="import" href="polymer-ui-presentation.html">
   </head>
   <body>
+    <header>
+      <h1>polymer-ui-presentation</h1>
+    </header>
+    <h2>Simple presentation element build with Polymer and Webcomponents.</h2>
     <polymer-ui-presentation>
       <section>
         <h1>Reveal.js</h1>
