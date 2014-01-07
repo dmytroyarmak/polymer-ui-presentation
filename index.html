@@ -5,21 +5,22 @@
       html, body {
         padding: 0;
         margin: 0;
+        background-color: #f7f7f7;
       }
 
-      header {
+      .header {
         background-color: #074E68;
         border: 1px solid #074E68;
       }
 
-      h1 {
+      .title {
         color: white;
         text-align: center;
         text-transform: uppercase;
         font-size: 2em;
       }
 
-      h2 {
+      .sub-title {
         width: 400px;
         padding-bottom: 1em;
         border-bottom: 1px solid #6f6f6f;
@@ -37,63 +38,48 @@
           height: 400px;
           border: 10px solid #008CBA;
           margin:  0 auto;
+          background-color: white;
       }
     </style>
     <script src="bower_components/platform/platform.js"></script>
     <link rel="import" href="polymer-ui-presentation.html">
   </head>
   <body>
-    <header>
-      <h1>polymer-ui-presentation</h1>
+    <header class="header">
+      <h1 class="title">polymer-ui-presentation</h1>
     </header>
-    <h2>Simple presentation element build with Polymer and Webcomponents.</h2>
+    <h2 class="sub-title">Simple presentation element build with Polymer and Webcomponents</h2>
     <polymer-ui-presentation>
       <section>
-        <h1>Reveal.js</h1>
-        <h3>HTML Presentations Made Easy</h3>
+        <h1>POLYMER-UI-PRESENTATION</h1>
+        <h3>Simple presentation element build with Polymer and Webcomponents</h3>
         <p>
-          <small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+          <small>Created by <a href="https://github.com/dmytroyarmak">Dmytro Yarmak</a></small>
         </p>
       </section>
 
       <section>
-        <h2>Heads Up</h2>
+        <h2>Slide 1</h2>
         <p>
-          reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-          support for CSS 3D transforms to see it in its full glory.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, maiores, modi nisi sint voluptatem mollitia.
         </p>
 
-        <aside class="notes">
-          Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-        </aside>
+        <img src="http://placehold.it/450x250">
       </section>
 
       <section>
-        <h2>Slides</h2>
+        <h2>Slide 2</h2>
         <p>
-          Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
+          Accusamus, maiores, modi nisi sint voluptatem mollitia corrupti beatae nihil iste nam reprehenderit error magni ducimus cumque eligendi rem assumenda! Nemo, dolorem? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
         </p>
-      </section>
-
-      <section>
-        <h2>Point of View</h2>
+        <img src="http://placehold.it/350x150">
         <p>
-          Press <strong>ESC</strong> to enter the slide overview.
-        </p>
-        <p>
-          Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, incidunt, sunt, ab est aperiam laboriosam consequatur quia repudiandae labore id beatae exercitationem libero expedita dolorem ipsam sed tempore nesciunt aliquid.
         </p>
       </section>
 
       <section>
-        <h2>Works in Mobile Safari</h2>
-        <p>
-          Try it out! You can swipe through the slides and pinch your way to the overview.
-        </p>
-      </section>
-
-      <section>
-        <h2>Marvelous Unordered List</h2>
+        <h2>Unordered List</h2>
         <ul>
           <li>No order here</li>
           <li>Or here</li>
@@ -103,21 +89,12 @@
       </section>
 
       <section>
-        <h2>Fantastic Ordered List</h2>
+        <h2>Ordered List</h2>
         <ol>
           <li>One is smaller than...</li>
           <li>Two is smaller than...</li>
           <li>Three!</li>
         </ol>
-      </section>
-
-      <section>
-        <h2>Global State</h2>
-        <p>
-          Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-          will be added as a class to the document element when the slide is open. This lets you
-          apply broader style changes, like switching the background.
-        </p>
       </section>
 
       <section>
