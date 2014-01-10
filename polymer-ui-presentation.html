@@ -19,6 +19,7 @@
  */
 -->
 <link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="bower_components/polymer-keydown/polymer-keydown.html">
 <link rel="import" href="bower_components/polymer-ui-pages/polymer-ui-pages.html">
 <link rel="import" href="bower_components/polymer-ui-arrow/polymer-ui-arrow.html">
 
@@ -29,7 +30,9 @@
       <content></content>
     </polymer-ui-pages>
     <polymer-ui-arrow direction="left" id="leftArrow" on-click={{prevSlide}}></polymer-ui-arrow>
+    <polymer-keydown code="37" on-keydown="{{prevSlide}}"></polymer-keydown>
     <polymer-ui-arrow direction="right" id="rightArrow" on-click={{nextSlide}}></polymer-ui-arrow>
+    <polymer-keydown code="39" on-keydown="{{nextSlide}}"></polymer-keydown>
   </template>
   <script>
     Polymer('polymer-ui-presentation', {
@@ -37,7 +40,6 @@
         this.slidesNumber = this.querySelectorAll('section').length;
         this.currentSlide = 1;
         this.centralizeSlides();
-        this.startListenKeyPress();
       },
 
       nextSlide: function() {
@@ -56,18 +58,6 @@
           var top = ~~((hostHeight - slide.clientHeight) / 2);
           slide.setAttribute('style', 'position: absolute; top: ' + top + 'px');
         });
-      },
-
-      startListenKeyPress: function() {
-        var that = this;
-        document.onkeydown = function checkKey(e) {
-            e = e || window.event;
-            if (e.keyCode == '37') {
-              that.prevSlide();
-            } else if (e.keyCode == '39') {
-              that.nextSlide();
-            }
-        };
       },
 
       currentSlideChanged: function() {

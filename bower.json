@@ -22,6 +22,7 @@
   "dependencies": {
     "polymer": "Polymer/polymer#~0.1.1",
     "polymer-elements": "Polymer/polymer-elements#~0.1.1",
-    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.1.1"
+    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.1.1",
+    "polymer-keydown": "~0.1.0"
   }
 }
